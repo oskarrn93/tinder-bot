@@ -21,7 +21,6 @@
   "homepage": "https://github.com/oskarrn93/tinder-bot#readme",
   "dependencies": {
     "chromedriver": "^79.0.2",
-    "dotenv": "^8.2.0",
     "requirejs": "^2.3.6",
     "selenium-webdriver": "^4.0.0-alpha.5"
   }
