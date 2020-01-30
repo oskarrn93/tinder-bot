@@ -20,7 +20,6 @@ const driver = new selenium.Builder()
   .build()
 
 const likeButtonXPath = By.xpath(`//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]`)
-const popUpAddTinderToHomeScreen = By.xpath(`//*[@id="modal-manager"]/div/div/div[2]/button[2]`)
 
 const getRandomTimeoutBetweenClicks = () => {
   return Math.random() * TIMEOUT_IN_MS + TIMEOUT_IN_MS / 2 //[0,1] * 1500 + 750, fastest = 750ms, slowest = 2250ms
@@ -29,12 +28,8 @@ const getRandomTimeoutBetweenClicks = () => {
 const clickLikeButton = async () => {
   return new Promise(resolve =>
     setTimeout(async () => {
-      try {
-        await driver.wait(until.elementLocated(likeButtonXPath), 5000)
-        driver.findElement(likeButtonXPath).click()
-      } catch (error) {
-        driver.findElement(popUpAddTinderToHomeScreen).click()
-      }
+      await driver.wait(until.elementLocated(likeButtonXPath), 5000)
+      driver.findElement(likeButtonXPath).click()
       resolve()
     }, getRandomTimeoutBetweenClicks()),
   )
