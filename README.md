@@ -31,4 +31,6 @@ or
 node index.js
 ```
 
-Exit the script by using `ctrl + c` in the shell where the script is running
+This will keep on running until something breaks :) 
+
+Exit the script by using `ctrl + c`
